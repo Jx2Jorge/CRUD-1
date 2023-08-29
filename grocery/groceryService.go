@@ -4,8 +4,8 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/carlosm27/apiwithgorm/model"
 	"github.com/gin-gonic/gin"
+	"githug.com/Jx2Jorge/CRUD-1/models"
 )
 
 type NewGrocery struct {
@@ -20,9 +20,9 @@ type GroceryUpdate struct {
 
 func GetGroceries(c *gin.Context) {
 
-	var groceries []model.Grocery
+	var groceries []models.Grocery
 
-	db, err := model.Database()
+	db, err := models.Database()
 	if err != nil {
 		log.Println(err)
 	}
@@ -37,9 +37,9 @@ func GetGroceries(c *gin.Context) {
 
 func GetGrocery(c *gin.Context) {
 
-	var grocery model.Grocery
+	var grocery models.Grocery
 
-	db, err := model.Database()
+	db, err := models.Database()
 	if err != nil {
 		log.Println(err)
 	}
